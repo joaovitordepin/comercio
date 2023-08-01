@@ -31,7 +31,7 @@ public class LojaController {
 		Produto p2 = new Produto();
 		p2.setId(13l);
 		p2.setNome("Xbox One");
-		p2.setCodigoBarras("SAJDN23135123");
+		p2.setCodigoBarras("SAJDN23135123u8jh8i");
 		p2.setPreco(2000.0);	
 		p2.setDescricao("Console");
 		p2.setStatus(true);
