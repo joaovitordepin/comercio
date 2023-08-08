@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itb.inf2dm.comercio.Produto; 
@@ -39,10 +40,18 @@ public class LojaController {
 		listaDeProdutos.add(p2);
 		
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
+		
+		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		return "produtos";
 	}
 	@GetMapping("/novo-prod")
-    public String novoProduto()	{
+    public String novoProduto(Model model, Produto produto)	{
+		model.addAttribute("produto", produto);
 		return "novo-prod";
+	}
+        @PostMapping("/add.prod")
+		public String gravarNovoProduto(Model model, Produto produto ) {
+		model.addAttribute("produto", produto);
+			return "redirect/produtos/listar";
 		}
 }
